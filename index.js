@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
@@ -28,6 +26,9 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log("Server is Listening");
+console.log("Server is Listening on "+port+" port");
+console.log("Base_Site: localhost:"+port);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -87,6 +88,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log('Server is listening on 3000 port!');
-  console.log('Base URL:'+addr.path);
+  console.log('Server is listening on 3001 port!');
+  console.log('Base URL:'+addr.pa);
 }
