@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="/stylesheets/common/amazeui.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/common/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/common/bootstrapValidator.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/common/bootstrap-datetimepicker.min.css"/>
+
+  
+  <link rel="stylesheet" href="/stylesheets/page/register/student.css"/>
+
+</head>
+<body>
+<header class="am-topbar am-topbar-fixed-top">
+  <div class="am-container">
+    <h1 class="am-topbar-brand">
+      <a href="/">JIA RUI</a>
+    </h1>
+
+    <div class="am-collapse am-topbar-collapse" id="collapse-head">
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li class="am-active"><a href="#">学生教师注册</a></li>
+        <li><a href="#ideaCallback">意见反馈</a></li>
+      </ul>
+
+      <div class="am-topbar-right">
+        <a href="http://localhost:8080/jrjy/jsp/standard/login.jsp" class="hvr-bounce-to-top">
+           <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登录</button>
+        </a>
+       
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="get">
+  <div class="am-g">
+    <div class="am-u-lg-12">
+      <h1 class="get-title">家睿家教信息平台</h1>
+
+      <p>
+        期待你的参与，共同打造一个简单易用的家教平台
+      </p>
+
+      <p>
+        <a href="http://amazeui.org" class="am-btn am-btn-sm get-btn">了解我们</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="detail">
+  <div class="am-g am-container">
+    <div class="am-u-lg-12">
+      <h2 class="detail-h2">在这儿，填下你的个人信息吧!</h2>
+      <div class="admin-content">
+
+  <div class="am-cf am-padding" >
+    <div class="am-fl am-cf" style="margin-left:200px;"><strong class="am-text-primary am-text-lg">个人信息</strong> / <small>info</small></div>
+  </div>
+
+<form id="register-form" method="post" class="form-horizontal" style="margin-left:200px;" action="/register/addStudentTeacher">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">用户名</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="USER_NAME" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">密码</label>
+                        <div class="col-md-5">
+                            <input type="password" class="form-control" id="psd" name="PASSWORD" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">确认密码</label>
+                        <div class="col-md-5">
+                            <input type="password" class="form-control" name="conpassword" />
+                        </div>
+                    </div>
+                    <div class="form-group" id="xbDOM"> 
+                    </div>
+                    <script type="javascript/ractive" id="xb-tpl">
+                    <label class="col-md-3 control-label">性别</label>
+                        <div class="col-md-5">
+                            <select class="form-control" name="XB"  placeholder="请选择" >
+                              <option value="">请选择</option>
+                              {{#each obj}}
+                              <option value="{{this.ID}}">{{this.NAME}}</option>
+                              {{/each}}
+                            </select>
+                        </div>
+                    </script>
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">QQ号码</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="QQ" />
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">移动电话</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="TELE" />
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">邮箱地址</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="E_MAIL" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">姓名</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="XM" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">学号</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" name="XH" />
+                        </div>
+                    </div>
+                    <div id="xxszdDom">
+                        
+                    </div>
+                    
+                    <script type="javascript/ractive">
+                       <div class="form-group">
+                        <label class="col-md-3 control-label">学校所在地</label>
+                        <div class="col-md-5">
+                            <select class="form-control" name="XXSZD" on-change="changeschool" id="xxszdId" placeholder="请选择" >
+                              <option value="">请选择</option>
+                              {{#each obj}}
+                              <option value="{{this.ID}}">{{this.NAME}}</option>
+                              {{/each}}
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-3 control-label">学校名称</label>
+                        <div class="col-md-5">
+                            <select class="form-control" name="XXMC"placeholder="请选择" >
+                              <option value="">请选择</option>
+                               {{#each xxmc}}
+                              <option value="{{this.ID}}">{{this.NAME}}</option>
+                              {{/each}}
+                            </select>
+                        </div>
+                      </div>
+                    </script>
+                
+                    
+                    <div class="form-group" id="sszyDOM">
+                    </div>
+                    <script type="javascript/ractive" id="sxzy-tpl">
+                      <label class="col-md-3 control-label">所学专业</label>
+                        <div class="col-md-5">
+                            <select class="form-control"  name="ZY"  placeholder="请选择" >
+                              <option value="" selected>请选择</option>
+                              {{#each obj}}
+                              <option value="{{this.ID}}">{{this.NAME}}</option>
+                              {{/each}}
+                            </select>
+                        </div>
+                    </script>
+            <!-- <div class="form-group">
+              <label class="col-lg-3 control-label">DateTime Picker</label>
+              <div class="col-lg-5">
+                  <div class="input-group date" id="datetimePicker">
+                      <input type="text" class="form-control" name="datetimePicker" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+            </div> -->
+                    <div class="form-group">
+                        <div class="col-md-5 col-md-offset-4">
+                            <button type="submit" name="submit" class="btn btn-primary">注册</button>
+                            <button type="reset" name="reset" class="btn btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div class="hope">
+  <div class="am-g am-container">
+    <div class="am-u-lg-4 am-u-md-6 am-u-sm-12 hope-img">
+      <img src="/stylesheets/i/examples/landing.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}">
+      <hr class="am-article-divider am-show-sm-only hope-hr">
+    </div>
+    <div class="am-u-lg-8 am-u-md-6 am-u-sm-12">
+      <h2 class="hope-title">同我们一起打造你的家教平台</h2>
+
+      <p>
+        在知识爆炸的年代，我们不愿成为知识的过客，加入我们让大学的生活充满精彩，让自我的能力得到极大的提升。
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="about" id="ideaCallback" style="margin-top:20px;">
+  <div class="am-g am-container">
+    <div class="am-u-lg-12">
+      <h2 class="about-title about-color">JIA RUI 崇尚开放、自由，非常欢迎大家的参与</h2>
+
+      <div class="am-g">
+        <div class="am-u-lg-6 am-u-md-4 am-u-sm-12">
+          <form class="am-form">
+            <label for="name" class="about-color">你的姓名</label>
+            <input id="name" type="text">
+            <br/>
+            <label for="email" class="about-color">你的邮箱</label>
+            <input id="email" type="email">
+            <br/>
+            <label for="message" class="about-color">你的留言</label>
+            <textarea id="message"></textarea>
+            <br/>
+            <button type="submit" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-check"></i> 提 交</button>
+          </form>
+          <hr class="am-article-divider am-show-sm-only">
+        </div>
+
+        <div class="am-u-lg-6 am-u-md-8 am-u-sm-12">
+          <h4 class="about-color">关于我们</h4>
+
+          <p>家睿家教信息交流平台
+          是为了解决在校大学生找家教难，和学生家长找到适合自己的家教老师难的一个平台， </p>
+          <h4 class="about-color">在这里你能收获什么</h4>
+
+          <p>在这里你不仅可以找到合适的家教工作，还可以与志同道合的同学一起探讨
+            怎样将一件事做的尽量完美，怎样在一次次的家教工作中提升自我，让自己有所进步</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p> <a href="http://www.yunshipei.com" target="_blank">关于我们</a>maintain by the JIA RUI Team.   <a
+      href="http://opensource.org/licenses/MIT" target="_blank">联系我们</a> </p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/register/student.js" ></script>
+</body>
+</html>

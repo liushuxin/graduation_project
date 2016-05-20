@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>关于网站</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-adge,chrome=1">
+		<meta name="viewport" content="">
+
+		<style>
+  
+  /*  @media screen and(min-width:520px) and(max-width:800px)*/
+        @media screen and(max-width:520px){
+          .st-panel h2{
+            font-size:42px;
+          }
+          .st-panel p{
+            width:90%;
+            left:10%;
+            margin-top:0;
+
+          }
+          .container{
+font-size:14px;
+          }
+        }
+           body{
+           	font-family:Georgia,serif;
+           	background: #ddd;
+           	font-weight: 400px;
+           	font-size:15px;
+           	color:black;
+
+              overflow: hidden; 
+           	-webkit-font-smoothing:antialiased;
+           }
+           a{
+           	text-decoration: none;
+           	color:#555;
+
+           }
+           .clr{
+           	width: 0;
+           	height: 0;
+           	overflow: hidden;
+           	clear:both;
+           	padding:0;
+           	margin:0;
+           }
+
+           .st-container{
+           	width:100%;
+           	height:100%;
+           	position: absolute;
+           	left:0;
+           	top:0;
+           	font-family: "Josefin Slao","Myriad Pro",Arial,sans-serif;
+           }
+           .st-container >input,
+           .st-container > a{
+           	width:20%;
+           	height:34px;
+           	line-height:34px;
+           	position:fixed;
+           	bottom:0;
+            cursor:pointer ;
+           }
+          .st-container >input
+         {
+         	opacity:0;
+         	z-index: 1000;
+           }
+                   .st-container >a{
+         	
+         	z-index: 10;
+         	font-weight: 700;
+         	font-size: 16px;
+         	background: #0BC2D1;
+         	text-align: center;
+         	color:#fff;
+         	box-shadow: 5px 1px 1px rgba(151,24,64,0.2);
+           }
+           #st-control-1, #st-control-1 +a{
+           	left:0%;
+           }
+            #st-control-2, #st-control-2 +a{
+           	left:20%;
+           }
+          #st-control-3, #st-control-3 +a{
+           	left:40%;
+           }
+            #st-control-4, #st-control-4 +a{
+           	left:60%;
+           }    
+                   #st-control-5, #st-control-5 +a{
+           	left:80%;
+           }
+          .st-container input:checked + a{
+          	background: #0FD2FF;
+
+           }
+                     .st-container input:checked + a:before{
+          	content: "";
+          	position:relative;
+          	top:-40px;
+          	left:50px;
+          	width:0px;
+          	height:0px;
+          	border:20px solid transparent ;
+          	border-bottom: 20px solid #0FD2FF;
+           }
+           /* 内容区 */
+         .st-scroll,.st-panel{
+       
+           position: relative;
+            width:100%;
+            height:100%;
+           
+           }
+           .st-scroll{
+
+            left:0;
+            top:0;
+            -webkit-transform: translate3d(0,0,0);
+             -moz-transform: translate3d(0,0,0);
+              -o-transform: translate3d(0,0,0);
+               -ms-transform: translate3d(0,0,0);
+               transform: translate3d(0,0,0);
+               -webkit-backface-visibility: hidden;
+               -webkit-transition:all 0.8s ease-in-out; 
+               -moz-transition:all 0.8s ease-in-out; 
+               -o-transition:all 0.8s ease-in-out; 
+               -ms-transition:all 0.8s ease-in-out; 
+               transition:all 0.8s ease-in-out; 
+           }
+        .st-panel{
+         background: #fff; 
+          overflow:hidden;
+
+        }
+
+        #st-control-1:checked ~ .st-scroll{
+          -webkit-transform: translateY(0%);
+           -moz-transform: translateY(0%);
+           -o-transform: translateY(0%);
+           -ms-transform: translateY(0%);
+            transform: translateY(0%);
+
+        }
+         #st-control-2:checked ~ .st-scroll{
+          -webkit-transform: translateY(-100%);
+           -moz-transform: translateY(-100%);
+           -o-transform: translateY(-100%);
+           -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+
+        }
+         #st-control-3:checked ~ .st-scroll{
+          -webkit-transform: translateY(-200%);
+           -moz-transform: translateY(-200%);
+           -o-transform: translateY(-200%);
+           -ms-transform: translateY(-200%);
+
+
+        }
+         #st-control-4:checked ~ .st-scroll{
+          -webkit-transform: translateY(-300%);
+           -moz-transform: translateY(-300%);
+           -o-transform: translateY(-300%);
+           -ms-transform: translateY(-300%);
+
+        }
+                #st-control-5:checked ~ .st-scroll{
+          -webkit-transform: translateY(-400%);
+           -moz-transform: translateY(-400%);
+           -o-transform: translateY(-400%);
+           -ms-transform: translateY(-400%);
+
+        }
+        .st-desc{
+          width:200px;
+          height:200px;
+          background: #0BC2D1;
+          position: absolute;
+          left:50%;
+          top:0;
+          margin-left:-100px;
+          -webkit-transform:translateY(-50%) rotate(45deg);
+          -moz-transform:translateY(-50%) rotate(45deg);
+          -o-transform:translateY(-50%) rotate(45deg);
+          -ms-transform:translateY(-50%) rotate(45deg);
+          transform:translateY(-50%) rotate(45deg);
+         
+        }
+
+        .div_font{
+ color:white;
+          font-size:45px;
+        line-height:300px;
+        text-align: center;
+            transform:translateY(0%) rotate(-45deg);
+           margin-right:-76px;
+        }
+
+        .st-panel h2{
+             color:#0BC2D1;
+             font-size:54px;
+             line-height:50px;
+             text-align: center;
+             font-weight:900;
+             position:absolute;
+             top:50%;
+             left:10%;
+             width:80%;
+             margin-top:-100px;
+             text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+             backface-visibility:hidden;
+        }
+        #st-control-1:checked ~ .st-scroll #con-01 h2,
+        #st-control-2:checked ~ .st-scroll #con-02 h2,
+        #st-control-3:checked ~ .st-scroll #con-03 h2,
+        #st-control-4:checked ~ .st-scroll #con-04 h2,
+       #st-control-5:checked ~ .st-scroll #con-05 h2
+      {
+        -webkit-animation:moveDown 1.6s ease-in-out 0.4s backwards;
+        -moz-animation:moveDown 1.6s ease-in-out 1.4s backwards;
+        animation:moveDown 1.6s ease-in-out 0.2s backwards;
+
+      }
+     #st-control-1:checked ~ .st-scroll #con-01 p,
+        #st-control-2:checked ~ .st-scroll #con-02 p,
+        #st-control-3:checked ~ .st-scroll #con-03 p,
+        #st-control-4:checked ~ .st-scroll #con-04 p,
+       #st-control-5:checked ~ .st-scroll #con-05 p
+      {
+  -webkit-animation:moveUp 1.6s ease-in-out 0.4s backwards;
+        -moz-animation:moveUp 1.6s ease-in-out 1.4s backwards;
+        animation:moveUp 1.6s ease-in-out 0.2s backwards;
+      }
+
+      @-webkit-keyframes moveDown{
+        0%{
+          -webkit-transform: translateY(-40px);
+          opacity:0;
+        }
+                100%{
+          -webkit-transform: translateY(0px);
+          opacity:1;
+        }
+      }
+
+            @keyframes moveDown{
+        0%{
+          transform: translateY(-40px);
+          opacity:0;
+        }
+                100%{
+          transform: translateY(0px);
+          opacity:1;
+        }
+      }
+
+      @-webkit-keyframes moveUp{
+        0%{
+          -webkit-transform: translateY(40px);
+          opacity:0;
+        }
+                100%{
+          -webkit-transform: translateY(0px);
+          opacity:1;
+        }
+      }
+
+            @keyframes moveUp{
+        0%{
+          transform: translateY(40px);
+          opacity:0;
+        }
+                100%{
+          transform: translateY(0px);
+          opacity:1;
+        }
+      }
+      .st-panel p{
+        position: absolute;
+        width:50%;
+        left:25%;
+        top:50%;
+   font-size:16px;
+   line-height: 22px;
+   padding:0;
+   text-align:center;
+   color:#0BC2D1;
+      }
+
+      .st-color{
+        background: #0BC2D1;
+
+      }
+      .st-color .st-desc{
+
+        background: #fff;
+      }
+            .st-color h2{
+
+        color: #fff;
+        text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+      }
+                  .st-color p{
+
+        color: rgba(255,255,255,0.8);
+        text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+      }
+      
+        .st-color .st-desc .div_font{
+        color: #0BC2D1;
+      }
+      .back-shouye{
+        float:right;
+        color:white;
+        margin-top:10px;
+        font-weight:bold;
+        margin-right:2%;
+      }
+      .back-shouye1{
+        float:right;
+        color:#0BC2D1;;
+        margin-top:10px;
+        font-weight:bold;
+        margin-right:2%;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+        <div class="st-container">
+      <input type="radio" name="asd" id="st-control-1" checked>
+      <a href="#con-01" >我们是做什么的</a>
+      <input type="radio"name="asd"  id="st-control-2">
+      <a href="#con-02" >使用指南</a>
+      <input type="radio"  name="asd" id="st-control-3">
+      <a href="#con-03">成长历程</a>
+      <input type="radio"  name="asd" id="st-control-4">
+      <a href="#con-04">招聘信息</a>
+      <input type="radio" name="asd"  id="st-control-5">
+      <a href="#con-04">研发团队</a>
+<!-- content begin-->
+      <div class="st-scroll">
+    <section class="st-panel st-color" id="con-01">
+      <div class="st-desc"><div class="div_font">欢迎您</div></div>
+       <h2>我们是做什么的</h2>
+       <p>家睿家教平台致力于连接大学生教师与家长和孩子的一款家教信息交流，分析平台，
+        对于大学生，在这里，你不仅可以收获工作经验，赚取零花钱，还可能结交到志同道合的朋友
+        对于家长来说，
+        在这里，你可以根据自己的需求，轻松找到适合自己孩子的老师，让孩子能够开心快乐的学习，让家长也能够放心的将孩子交给家教老师</p>
+        <a href="/" class="back-shouye">返回首页</a>
+    </section>
+      <section class="st-panel" id="con-02">
+         <div class="st-desc"><div class="div_font">欢迎您</div></div>
+       <h2>使用指南</h2>
+       <p>平台包含两类用户1、大学生教师，2、学生家长<br>
+        大学生教师：需先注册账户，注册之后待管理员进行审核之后才可以进行接下来的操作<br>
+        学生家长：如果浏览网站推荐内容则不需要注册登录，如果希望发布信息或者</p>
+      <a href="/" class="back-shouye1">返回首页</a></section>
+
+      <section class="st-panel st-color" id="con-03">
+         <div class="st-desc"><div class="div_font">欢迎您</div></div>
+         <h2>成长历程</h2>
+       <p>2016.1.1 网站正式上线————2016.3.1 网站进行第一次改版————2016.5.1网站新增大学生教师能力评估功能</p>
+       <a href="/" class="back-shouye">返回首页</a>
+      </section>
+      <section class="st-panel" id="con-04">
+         <div class="st-desc"><div class="div_font">欢迎您</div></div>
+         <h2>招聘信息</h2>
+       <P>我们一直在寻找不同凡响的你，只要你有梦想，希望用技术去改变我们的生活方式甚至改变世界，那就加入我们吧，<br>
+        平台长期招募<br>
+        1、前端开发工程师
+        2、JAVA开发工程师
+        3、服务器运维工程师
+        4、测试工程师<br>
+        感兴趣的请将简历投向我们吧
+        投递地址：1712931221@qq.com
+      </P>
+      <a href="/" class="back-shouye1">返回首页</a>
+      </section>
+      <section class="st-panel st-color" id="con-05">
+         <div class="st-desc"><div class="div_font">欢迎您</div></div>
+         <h2>研发团队</h2>
+       <P>由于平台刚刚组建，平台目前研发团队就我一个人，希望有梦想的你也能加入其中</P>
+       <a href="/" class="back-shouye">返回首页</a>
+      </section>  
+    </div>
+    </div> 
+      
+
+    
+    </div>
+	
+	</body>
+
+	<script>
+//    var  object ={{id:"1",pid:"0",jname:"diyi1",c_p:0,is_only:0},
+//                  {id:"2",pid:"1",jname:"diyi2",c_p:1,is_only:0},
+//                  {id:"3",pid:"2",jname:"diyi3",c_p:1,is_only:1},
+//                  {id:"4",pid:"1",jname:"diyi4",c_p:2,is_only:1},
+// }
+
+var radioEle =document.getElementsByTagName('input');
+var scrollFunc =function(e){
+  var dirct =0;
+  e=e||window.event;
+  if(e.wheelDelta){
+    if(e.wheelDelta>0){
+      alert("up");
+    }
+    if(e.wheelDelta<0){
+      alert("down")
+    }
+  }else if(e.detail){
+    if(e.detail>0){
+        alert("up");
+    }
+    if(e.detail<0){
+        alert("down");
+    }
+  }
+}
+
+if(document.addEventListener){
+  document.addEventListener("DOMMouseScroll",scrollFunc,false);
+
+}
+window.onmousewheel =scrollFunc;
+
+	</script>
+</html>

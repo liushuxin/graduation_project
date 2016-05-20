@@ -1,11 +1,351 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+<title><%=title%></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="家教，家睿，兼职平台" />
+
+<link href="/stylesheets/common/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="/stylesheets/home/style.css" rel='stylesheet' type='text/css' />
+<script src="/javascripts/lib/jquery.min.js"></script>
+<script src="/javascripts/lib/bootstrap.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="/javascripts/module/move-top.js"></script>
+<script type="text/javascript" src="/javascripts/module/easing.js"></script>
+<style>
+  .modal-body a:hover,.modal-body a:active,.modal-body a{
+    color:white;
+  }
+</style>
+<!--start-smoth-scrolling-->
+</head>
+<body>
+  <!--start-header-->
+  <div class="header" id="home">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="/stylesheets/images/logo.png" alt="" /></a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/" class="hvr-bounce-to-top">主页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="" class="hvr-bounce-to-top" data-toggle="modal"
+   data-target="#myModal">注册</a></li>
+          <li><a href="http://localhost:8080/jrjy/jsp/standard/login.jsp" class="hvr-bounce-to-top">教师登录</a></li>
+          <li><a href="http://localhost:8080/jrjy/jsp/admin/login.jsp" class="hvr-bounce-to-top">学生家长登录</a></li>
+          <li><a href="/introduce" class="hvr-bounce-to-top">关于</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <!--end-header-->
+  <!--start-banner-->
+  <div class="banner">
+    <div class="container">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+              <div class="banner-top">
+                <h1>大学生的兼职天堂</h1>
+                <h2>让你的业余生活丰富起来吧</h2>
+                <p>家睿家教是一个专门为</p>
+                <div class="bnr-btn">
+                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="banner-top">
+                <h1>孩子的家教之家</h1>
+                <h2>让孩子进步更快</h2>
+                <p>家睿家教是一个专门为</p>
+                <div class="bnr-btn">
+                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="banner-top">
+                <h1>我们的网站</h1>
+                <h2>网站之家</h2>
+                <p>家睿家教是一个专门为</p>
+                <div class="bnr-btn">
+                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!--end-banner-->
+  <!--FlexSlider-->
+  <link rel="stylesheet" href="stylesheets/home/flexslider.css" type="text/css" media="screen" />
+  <script defer src="javascripts/module/jquery.flexslider.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+  <!--End-slider-script-->  
+  <!--start-provide-->
+  <div class="provide">
+    <a href="http://localhost:8080/jrjy/fancyapps-fancyBox-18d1712/demo/index.html">
+    <div class="col-md-3 provide-left provide-one">
+      <h5>适合的教师</h5>
+      <h3>精英推荐 </h3>
+      <p>在这里汇聚各科精英教师，总有一款适合你的孩子</p>
+    </div>
+    </a>
+    <div class="col-md-3 provide-left provide-two">
+      <h5>最适合你的工作</h5>
+      <h3>完美JOB</h3>
+      <p>在这里你能够找到高性价比的工作，让你的课余生活丰富起来吧</p>
+    </div>
+    <div class="col-md-3 provide-left provide-tre">
+      <h5>手拉手</h5>
+      <h3>合作交流</h3>
+      <p>对我们的所有意见，小编一一接受，并且有精美的礼品呦</p>
+    </div>
+    <div class="col-md-3 provide-left provide-four">
+      <h5>网站访问量</h5>
+      <h3>实时流量</h3>
+      <p> 用数据告诉你为什么要来这里，这个平台你值得拥有</p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!--end-provide-->
+  <!--start-welcome-->
+  <div class="welcome">
+    <div class="container">
+      <div class="welcome-top">
+        <div class="col-md-6 welcome-left">
+          <h3>学习资料</h3>
+          <h4>这里有优秀老师总结的学习宝典</h4>
+          <p>我们希望我们能够提供有品质</p>
+          <div class="w-btn">
+            <a href="#" class="hvr-shutter-out-horizontal">了解更多</a>
+          </div>
+        </div>
+        <div class="col-md-6 welcome-left">
+          <h3>网络课程</h3>
+          <h4>让视频祝你一臂之力吧</h4>
+          <p>优秀的你也来录制一段视频上传吧，资源总是要共享的</p>
+          <div class="w-btn">
+            <a href="#" class="hvr-shutter-out-horizontal">了解更多</a>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!--end-welcome-->
+  <!--start-join-->
+  <div class="join">
+    <div class="container">
+      <div class="join-main">
+        <div class="col-md-3 join-left">
+          <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <h4>今日推荐</h4>
+          <p>Proin fermentum diam eu massa blandit, congue finibus ante pulvinar. Aliquam lacinia odio eros.</p>
+        </div>
+        <a href="http://localhost:8080/jrjy/jsp/admin/login.jsp"><div class="col-md-3 join-left">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <h4>管理员管理</h4>
+          <p>Proin fermentum diam eu massa blandit, congue finibus ante pulvinar. Aliquam lacinia odio eros.</p>
+        </div></a>
+        
+        <div class="col-md-3 join-left">
+          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+          <h4>热门城市</h4>
+          <p>这是我们的业务范围.</p>
+        </div>
+        <div class="col-md-3 join-left">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+          <h4>付费商城</h4>
+          <p>这里有你想要的精品课程.但需要花费的的$才可以呀</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!--end-join-->
+
+  <!--start-news-->
+  <div class="news">
+    <div class="container">
+      <div class="news-top">
+        <div class="col-md-8 news-left">
+          <div class="news-heading">
+            <h3>新闻篇</h3>
+          </div>
+          <div class="news-bottom">
+            <h4>Excepteur sint occaecat cupidatat non proident</h4>
+            <p>Quisque at tellus ullamcorper, pharetra arcu a, suscipit purus. Nullam feugiat in augue in consequat. Sed ac dictum ligula, et pellentesque velit. In gravida eu felis sit amet molestie. Morbi sed ex ac enim finibus vulputate. Cras arcu magna, auctor ornare neque in, finibus tincidunt augue. </p>
+            <div class="news-one">
+              <div class="news-one-left">
+                <img src="/stylesheets/images/n-1.jpg" alt="" />
+              </div>
+              <div class="news-one-right">
+                <h4>Morbi sed ex ac enim finibus vulputate. Cras arcu magna, auctor ornare neque in.</h4>
+                <p>Nullam egestas diam eu felis dignissim, vitae posuere ex pretium. Morbi quam purus, rhoncus eget enim sed, laoreet venenatis arcu. Curabitur vestibulum, orci pulvinar pretium cursus, diam ante pretium elit, at finibus nisl ligula vitae enim. eu eleifend enim condimentum ac.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="news-one">
+              <h4>Nunc molestie venenatis nisi nec pharetra. Morbi nulla odio, commodo a facilisis sed, tristique eget ipsum.</h4>
+              <p>Cras gravida metus vel tortor porttitor pretium. Cras posuere sem ut neque commodo aliquet. Proin in dui tempor, volutpat velit congue, mollis felis. Proin quis ante vitae nunc cursus interdum. Sed nec placerat risus. Sed rhoncus nibh et accumsan placerat. Nunc nec libero a dui cursus mattis placerat a urna.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 news-right">
+          <div class="news-heading">
+            <h3>筑梦计划</h3>
+          </div>
+          <div class="news-btm">
+            <div class="news-1">
+              <img src="/stylesheets/images/n-2.jpg" alt="" />
+              <div class="n-1">
+                <h5>Mauris eros felis</h5>
+                <p>Mauris varius consequat tortor vitae</p>
+              </div>
+            </div>
+            <div class="news-1">
+              <img src="/stylesheets/images/n-3.jpg" alt="" />
+              <div class="n-1">
+                <h5>Mauris eros felis</h5>
+                <p>Mauris varius consequat tortor vitae</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!--end-news-->
+  <!--start-teacher-->
+  <div class="teacher">
+    <div class="container">
+      <div class="teacher-top">
+        <h3>金牌教师</h3>
+      </div>
+      <div class="teacher-main">
+        <div class="teacher-left">
+          <img src="/stylesheets/images/t-1.jpg" alt="" />
+          <h4>Sarah Smith</h4>
+          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+        </div>
+        <div class="teacher-left">
+          <img src="/stylesheets/images/t-2.jpg" alt="" />
+          <h4>Milla Row</h4>
+          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+        </div>
+        <div class="teacher-left">
+          <img src="/stylesheets/images/t-3.jpg" alt="" />
+          <h4>John Franklin</h4>
+          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+        </div>
+        <div class="teacher-left">
+          <img src="/stylesheets/images/t-4.jpg" alt="" />
+          <h4>Amina Wilson</h4>
+          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+        </div>
+        <div class="teacher-left">
+          <img src="/stylesheets/images/t-5.jpg" alt="" />
+          <h4>Jack Jones</h4>
+          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!--end-teacher-->
+  <!--start-footer-->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="col-md-4 footer-left">
+          <span class="glyphicon glyphicon-map-marker map-marker" aria-hidden="true"></span>
+          <p>北京市 <span>朝阳区</span> 望京东路11号</p>
+        </div>
+        <div class="col-md-4 footer-left">
+          <span class="glyphicon glyphicon-phone map-marker" aria-hidden="true"></span>
+          <p>+1 800 603 6035 <span>+1 900 300 1320</span> </p>
+        </div>
+        <div class="col-md-4 footer-left">
+          <p class="footer-class"></p>
+         
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+                  $(document).ready(function() {
+                    /*
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                      containerHoverID: 'toTopHover', // fading element hover id
+                      scrollSpeed: 1200,
+                      easingType: 'linear' 
+                    };
+                    */
+                    
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                  });
+                </script>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+  </div>
+  <!--end-footer-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+        data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+         选择注册类型
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 col-xs-6"><button class="btn btn-success"  data-key="parent"><a href="register/parent">学生家长注册</a></button></div>
+          <div class="col-md-6 col-xs-6"><button class="btn btn-primary" data-key="student"><a href="register/student">学生教师注册</a></button></div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</body>
+<script src="/javascripts/lib/r.js" data-main="/javascripts/index.js" ></script>
 </html>
