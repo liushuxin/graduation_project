@@ -1,5 +1,6 @@
 var express = require('express');
 var enrouten = require('express-enrouten');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -14,7 +15,13 @@ app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 // Template Engine: nunjucks
 app.engine('nunjucks', cons.nunjucks);
-
+ app.use(session({
+     secret: '12345',
+     name: 'testapp',   //这里的name值得是cookie的name，默认cookie的name是：connect.sid
+     cookie: {maxAge: 3000000 },  //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+     resave: false,
+     saveUninitialized: true,
+ }));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -25,6 +32,7 @@ app.use(cookieParser());
 app.use(enrouten({
   directory: 'controllers'
 }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler

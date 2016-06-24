@@ -1,0 +1,52 @@
+<script type="javascript/ractive" id="pinYong-tpl">
+	<div class="container">
+		<form class="form-inline" id="form-pinyong" method="get" action="/state_process/getPinYong">
+	  <div class="form-group">
+	    <label for="exampleInputName2">薪资水平》=</label>
+	    <input type="number" class="form-control"  placeholder="只能是数字" name="start_xzsp">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">薪资水平《=</label>
+	    <input type="number" class="form-control" name="end_xzsp"  placeholder="只能是数字">
+	  </div>
+	  <br>
+	  
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">所教科目</label>
+	    <select class="form-control" placeholder="请选择" name="sjkm">
+			  <option value="">请选择</option>
+			  {{#each course}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">所教学期</label>
+	    <select class="form-control" placeholder="请选择" name="sjxq">
+			  <option value="">请选择</option>
+			  {{#each xq}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <br>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">所教年级</label>
+	    <select class="form-control" placeholder="请选择" name="sjnj">
+			  <option value="">请选择</option>
+			  {{#each nj}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	 
+	  <br>
+
+	  <button type="submit" style="margin-left:50px;" class="btn btn-primary">查询</button>
+	</form>
+</div>
+<hr/>
+<div class="main-table">
+<table class="xxtable table table-striped"></table>
+</div>
+</script>

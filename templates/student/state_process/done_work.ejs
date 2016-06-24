@@ -1,0 +1,51 @@
+<script type="javascript/ractive" id="donework-tpl">         
+	<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">开始时间</button>
+      </span>
+      <input type="date" class="form-control" id="kssj" placeholder="请选择">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+       <span class="input-group-btn">
+        <button class="btn btn-default" type="button">结束时间</button>
+      </span>
+      <input type="date" class="form-control" id="jssj" placeholder="请选择">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="input-group" style="margin-left:50px;margin-top:50px;">
+
+    <button class="btn btn-default" id="cxDoneInfo" type="button">查询</button>
+  </div><!-- /input-group -->
+</div><!-- /.row -->
+<hr/>
+<div class="container" style="width:600px;">
+     {{#each obj:key}}
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-danger active ">
+            <span class="badge"></span>兼职时间：{{obj[key].KSSJ}}--{{obj[key].JSSJ}}
+        </a>
+        <a href="#" class="list-group-item list-group-item-danger  ">
+        所教科目：<widget tableName="DIR_STD_COURSE" codevalue="{{obj[key].SJKCM}}"/> &nbsp;&nbsp; &nbsp;&nbsp;所教年级：<widget tableName="DIR_STD_JJNJ" codevalue="{{obj[key].SJNJ}}"/>&nbsp;&nbsp; &nbsp;&nbsp;
+        所教学期：<widget tableName="DIR_STD_XQ" codevalue="{{obj[key].SJXQ}}"/>
+        </a>
+        <a href="#" class="list-group-item list-group-item-danger ">
+          期望薪资：{{obj[key].QWXZ}} &nbsp;&nbsp; &nbsp;&nbsp;具体地址：{{obj[key].ADDRESS}} 
+        </a>
+        <a href="#" class="list-group-item list-group-item-danger ">
+           家长用户名：{{obj[key].PAR_NAME}}&nbsp;&nbsp; &nbsp;&nbsp; 所在城市：<widget tableName="DIR_STD_CITY" codevalue="{{obj[key].INCITY}}"/>
+        </a>
+         <a href="#" class="list-group-item list-group-item-danger ">
+           综合评分：{{obj[key].SCORE}} &nbsp;&nbsp; &nbsp;&nbsp;满意程度：<widget tableName="DIR_STD_MYCD" codevalue="{{obj[key].MYD}}"/>
+        </a>
+         <a href="#" class="list-group-item list-group-item-danger ">
+          评价：{{obj[key].PJ}} 
+        </a>
+    </div>
+{{/each}}
+</div>
+
+</script>

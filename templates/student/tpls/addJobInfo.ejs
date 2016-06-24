@@ -1,0 +1,54 @@
+
+<script type="javascript/ractive" id="addJob-tpl">
+<div class="container">
+	<form method="post" action="/student_rele_info/addJobInfo" id="form-add-Job" style="padding-left:150px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">所教课程名</label>
+  
+    <select class="form-control" name="SJKCM" required="required" id="sjkcm">
+    <option value="">请选择</option>
+    {{#each course}}
+     <option value="{{this.ID}}">{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">所教年级</label>
+  
+    <select class="form-control" name="SJNJ" required="required" id="sjnj">
+     <option value="">请选择</option>
+     {{#each nj}}
+     <option value="{{this.ID}}">{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">所教学期</label>
+  
+    <select class="form-control" name="XQ" required="required" id="xq">
+     <option value="">请选择</option>
+     {{#each xq}}
+     <option value="{{this.ID}}">{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">期望薪资水平</label>
+  	<div class="input-group">
+     <div class="input-group-addon">￥</div>
+       <input type="number" class="form-control" name="qwxzsp" style="width:300px;" required="required" />
+    </div>
+   
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">以往经验描述</label>
+  
+    <textarea class="form-control" name="ywjyms" rows="5" style="width:500px;"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">提交</button>
+</form>
+</div>
+	
+</script>

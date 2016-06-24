@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=title%></title>
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/textarea/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/textarea/default.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/common/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/textarea/wysiwyg-editor.css" />
+	<link href="/stylesheets/textarea/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+	<form action="/student/addBlog" method="post" id="form-blog">
+		
+		<div class="content bgcolor-1">
+			<div class="main">
+				<div style="margin-left:200px;" class="form-group form-inline">
+    <label for="exampleInputPassword1">文章标题:</label>
+		    <input type="text" style="width:300px;margin-left:100px;" class="form-control" id="exampleInputPassword1" name="wzmc" placeholder="文章标题">
+		</div>
+					
+				<div style="width:860px;height:500px; margin: 30px auto;">
+				  <div style="color:#aa0000;font-weight:bold;font-size:0.8em;padding-bottom:8px;">开始写你的博客文章吧:</div>
+				  <textarea id="editor1" name="wznr" placeholder="Type your text here...">
+				   
+				    
+				  </textarea>
+				  <div style="margin-left:300px;" class="form-group form-inline">
+    
+		    <button type="submit" style="width:100px;margin-top:10px;margin-right:100px;"  class="btn btn-success">添加</button>
+
+		</div>
+				</div>
+					
+			</div>
+		</div>
+	</form>
+			    <a href="/student">
+		    	<button style="width:100px; margin-left:100px; margin-top:10px;"  class="btn btn-primary">返回上一级</button>
+		    </a> 
+	</div>
+</body>
+<script type="text/javascript" src="/javascripts/lib/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/lib/wysiwyg.js"></script>
+<script type="text/javascript" src="/javascripts/lib/wysiwyg-editor.js"></script>
+<script type="text/javascript" src="/javascripts/lib/demo.js"></script>
+</html>

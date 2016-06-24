@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=title%></title>
+	<link rel="stylesheet" href="/stylesheets/common/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/common/amazeui.min.css">
+    <link rel="stylesheet" href="/stylesheets/page/student/person.css">
+    <link rel="stylesheet" href="/stylesheets/common/fileinput.min.css">
+   
+    <style>
+     .person label{
+			min-width:100px;
+     }
+    .person input{
+			margin-bottom:10px;
+			min-width:300px;
+     }
+     button.btn{
+     	min-width:100px;
+     	margin-left:50px;
+     }
+     button.btn a{
+     color:#000;
+     text-decoration: none;
+     }
+     
+    </style>
+</head>
+<body>
+<header class="am-g my-head">
+  <div class="am-u-sm-12 am-article">
+    <h1 class="am-article-title">	<%=data.XM%>,你好！</h1>
+    <p class="am-article-meta"><%=data.XXMC%></p>
+  </div>
+</header>
+<hr class="am-article-divider"/>
+<div class="am-g am-g-fixed">
+  <div class="am-u-md-9 am-u-md-push-3">
+    <div class="am-g">
+      <div class="am-u-sm-11 am-u-sm-centered">
+        <div class="am-cf am-article">
+          
+         
+          <p></p>
+          <h2>修个人信息改</h2>
+        <form id="personInfo" method="post" >
+        	
+     
+         <div class="form-group form-inline person">
+         	<label for="">用户名:</label>
+         	<input type="text" class="form-control"value="<%=data.USER_NAME%>" name="username">
+         	<br>
+         	<label for="" >密码:</label>
+         	<input type="password" class="form-control"value="<%=data.PASSWORD%>" name="password">
+         	<br>
+         		<label for="" >确认密码:</label>
+         	<input type="password" class="form-control"value="<%=data.PASSWORD%>" name="conpassword">
+         	<br>
+         	<label for="">移动电话:</label>
+         	<input type="text" class="form-control"value="<%=data.TELE%>" name="tele">
+         	<br>
+         	<label for="">邮箱地址:</label>
+         	<input type="text" class="form-control"value="<%=data.E_MAIL%>" name="email">
+         	 	<input type="hidden" class="form-control" value="<%=data.RESOURCE_ID%>" name="resource_id">
+         	<br>
+         </div>
+          <hr class="am-article-divider">
+          <button  type="submit" class="btn btn-success">修改</button>
+          
+           	<button  type="reset" class="btn btn-defualt" > <a href="/student">返回上层</a>           </button> 
+
+          <hr class="am-article-divider">
+         
+         
+             </form>
+        </div>
+        <hr/>
+
+      </div>
+    </div>
+  </div>
+  <div class="am-u-md-3 am-u-md-pull-9 my-sidebar">
+    <div class="am-offcanvas" id="sidebar">
+      <div class="am-offcanvas-bar">
+        <ul class="am-nav">
+          <li class="am-nav-header">头像上传（可不传）</li>
+          <li>
+<img  class="touxiangImg"src="<%=imgUrl%><%=data.FILE_PATH%>" alt="头像">
+            上传你的照片吧！</li>
+          <li>
+            <form action="/student/updateImage" id="imageForm" enctype="multipart/form-data" method="post" >
+              <label class="control-label">选择文件</label>
+            <input id="file-Portrait" type="file" name="fileToUpload" class="file">
+            <input type="hidden" value="<%=data.RESOURCE_ID%>" name="resource_id" id="resource_id">
+            
+            </form>
+         		    
+					</li>
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a href="#sidebar" class="am-btn am-btn-sm am-btn-success am-icon-bars am-show-sm-only my-button" data-am-offcanvas><span class="am-sr-only">侧栏导航</span></a>
+</div>
+
+<footer class="my-footer">
+  <p>家睿教育<br><small>© Copyright JIA RUI by liushuxin team</small></p>
+</footer>
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/student/modify_person.js" ></script>
+</html>
+
+
+
+

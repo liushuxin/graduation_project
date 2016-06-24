@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <mata name="viewport" content="width:device-width,initial-scale=1">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="stylesheets/common/bootstrap.min.css">
+      <link rel="stylesheet" href="stylesheets/common/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/page/parent/index.css">
+     <style>
+.chart_l{
+height:400px;
+width:800px;
+color:purple;
+}
+  </style>
+</head>
+<body>
+<div class="myheading">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">
+                    <image src="/images/2.jpg" style="width:54px; margin-top:-20px;">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                   <li>会员管理</li>
+                   <li class="active"><a href="">你好！<%=username%>，家长</a> </li>
+               </ul>
+<a href="/login/logout?user=student" class="btn btn-primary navbar-btn navbar-right" type="button">注销</a>
+             
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+<div class="mybody container">
+    <div class="row">
+        <div class="col-md-3 leftmenu">
+<div class="list-group">
+    <a href="#" class="list-group-item active" data-operation="workInfo" >教师发布信息查询</a>
+    <a href="#" class="list-group-item " data-operation="add"> 发布信息</a>
+    <a href="#" class="list-group-item "  data-operation="manageInfo"> 对发布信息进行管理</a>
+    <a href="#" class="list-group-item" data-operation="reviewApply">审核工作请求</a>
+   <!--  <a href="#" class="list-group-item ">招聘记录</a> -->
+    <a href="#" class="list-group-item" data-operation="engageInfo">聘用记录</a>
+    <a href="/" class="list-group-item "> 返回首页</a>
+
+</div>
+        </div>
+        <div class="col-md-9 content" >
+            <ol class="breadcrumb">
+    <li><a href="#">学睿家教</a></li>
+    <li><a href="#"><%=title%></a></li>
+
+</ol>
+<div class="main-content">
+    
+</div>
+        </div>
+
+    </div>
+
+    <div class="myfooter ">
+        <p>
+            @家睿教育 www.jrjy.com
+        </p>
+    </div>
+</div>
+<div class="detail-content"></div>
+</body>
+
+<% include tpls/jzxxcx.ejs %>
+
+
+<% include tpls/addJobInfo.ejs %>
+<% include tpls/modifyJobInfo.ejs %>
+<% include tpls/manageJobInfo.ejs %>
+<!-- 显示大学生教师详细兼职信息 -->
+<% include state_process/review_apply.ejs %>
+<% include state_process/engage_info.ejs %>
+
+<% include tpls/detail.ejs %>
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/parent/index.js" ></script>
+</html>

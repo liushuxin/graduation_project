@@ -1,0 +1,75 @@
+
+<script type="javascript/ractive" id="modifyJob-tpl">
+<div class="container">
+	<form method="post" action="/parent_rele_info/modifyJobInfo" id="form-modify-Job" style="padding-left:150px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">所教课程名</label>
+  
+    <select class="form-control" name="SJKCM" required="required" id="sjkcm">
+    <option value="">请选择</option>
+    {{#each course}}
+     <option value="{{this.ID}}"   {{#if obj.SJKCM ==this.ID}}selected{{/if}}>{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">所教年级</label>
+  
+    <select class="form-control" name="SJNJ" required="required" id="sjnj">
+     <option value="">请选择</option>
+     {{#each nj}}
+     <option value="{{this.ID}}"  {{#if obj.SJNJ ==this.ID}}selected{{/if}}>{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">所教学期</label>
+  
+    <select class="form-control" name="XQ" required="required" id="xq">
+     <option value="">请选择</option>
+     {{#each xq}}
+     <option value="{{this.ID}}"  {{#if obj.SJXQ ==this.ID}}selected{{/if}}>{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">性别要求</label>
+  
+    <select class="form-control" name="XBYQ" required="required" id="xb">
+     <option value="">请选择</option>
+     {{#each xb}}
+     <option value="{{this.ID}}" {{#if obj.XBYQ ==this.ID}}selected{{/if}}>{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">年级要求</label>
+  
+    <select class="form-control" name="NJYQ" required="required" id="nj">
+     <option value="">请选择</option>
+     {{#each sznj}}
+     <option value="{{this.ID}}" {{#if obj.NJYQ ==this.ID}}selected{{/if}}>{{this.NAME}}</option>
+    {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">期望薪资水平</label>
+  	<div class="input-group">
+     <div class="input-group-addon">￥</div>
+       <input type="number" class="form-control" value="{{obj.CDXZSP}}" name="CDXZSP" style="width:300px;" required="required" />
+       <input type="hidden" value="{{obj.RESOURCE_ID}}" name="resource_id"/>
+    </div>
+   
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">备注</label>
+  
+    <textarea class="form-control" value="{{obj.BZ}}"  name="BZ" rows="5" style="width:500px;"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">修改</button>
+</form>
+</div>
+	
+</script>

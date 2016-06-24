@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/common/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/page/login/index.css">
+</head>
+<body>
+	<div class="contrainer">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4 con-title">
+				<span class="jiarui">家睿教育</span>
+				<span class="con-sub"><%=showtitle%></span></div>
+			<div class="col-md-4"></div>
+		</div>
+		<div class="row" >
+			<div class="col-md-4"></div>
+			<div class="col-md-4" style="text-align:center;"><div class="main-content">
+				<p class="p-title">
+					<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>登录
+					<span style="float:right;margin-right:10px;">
+						还没有账户？<a href="<%=aurl%>" title="注册"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+					</span>
+				</p>
+				<form class="form-main">
+					  <input type="hidden" class="form-control" value="<%=type%>" id="loginType" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">用户名</label>
+    <input type="email" class="form-control" required id="username" placeholder="用户名">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">密码</label>
+    <input type="password" class="form-control" required id="password" placeholder="密码">
+  </div>
+  
+  <div class="form-group ">
+
+    <span style="width:100px;height:30px;margin-top:10px;background:#ccc;display:inline-block;font-size:20px;font-weight:bold;color:white; text-align:center;" id="yzm"></span>
+    
+		<input type="text" class="form-control" style="width:200px;" id="conyzm"  placeholder="请输入验证码"><div  class="bg-success" style="display:inline-block; width:100px;font-size:18px;" id="change">换一张</div>
+  </div>
+  <button class="btn btn-info pull-right" >登录</button> 
+  <div class="clearfix"></div>
+  <p class="pull-right">忘记密码？找回密码</p>
+   <p ><a href="/">返回首页</a></p>
+			</div>
+
+				
+		</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+	
+</body>
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/login/index.js" ></script>
+</html>

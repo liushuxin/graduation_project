@@ -8,6 +8,12 @@
 
 <link href="/stylesheets/common/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="/stylesheets/home/style.css" rel='stylesheet' type='text/css' />
+<style>
+  .teacher-left img{
+    height:150px;
+    width:200px;
+  }
+</style>
 <script src="/javascripts/lib/jquery.min.js"></script>
 <script src="/javascripts/lib/bootstrap.js"></script>
 <!---- start-smoth-scrolling---->
@@ -41,8 +47,8 @@
           <li class="active"><a href="/" class="hvr-bounce-to-top">主页 <span class="sr-only">(current)</span></a></li>
           <li><a href="" class="hvr-bounce-to-top" data-toggle="modal"
    data-target="#myModal">注册</a></li>
-          <li><a href="http://localhost:8080/jrjy/jsp/standard/login.jsp" class="hvr-bounce-to-top">教师登录</a></li>
-          <li><a href="http://localhost:8080/jrjy/jsp/admin/login.jsp" class="hvr-bounce-to-top">学生家长登录</a></li>
+          <li><a href="/login/student" class="hvr-bounce-to-top">教师登录</a></li>
+          <li><a href="/login/parent" class="hvr-bounce-to-top">学生家长登录</a></li>
           <li><a href="/introduce" class="hvr-bounce-to-top">关于</a></li>
         </ul>
         <div class="clearfix"></div>
@@ -63,7 +69,7 @@
                 <h2>让你的业余生活丰富起来吧</h2>
                 <p>家睿家教是一个专门为</p>
                 <div class="bnr-btn">
-                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                  <a href="/introduce" class="hvr-shutter-out-horizontal">更多信息</a>
                 </div>
               </div>
             </li>
@@ -73,7 +79,7 @@
                 <h2>让孩子进步更快</h2>
                 <p>家睿家教是一个专门为</p>
                 <div class="bnr-btn">
-                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                  <a href="/introduce" class="hvr-shutter-out-horizontal">更多信息</a>
                 </div>
               </div>
             </li>
@@ -83,7 +89,7 @@
                 <h2>网站之家</h2>
                 <p>家睿家教是一个专门为</p>
                 <div class="bnr-btn">
-                  <a href="#" class="hvr-shutter-out-horizontal">更多信息</a>
+                  <a href="/introduce" class="hvr-shutter-out-horizontal">更多信息</a>
                 </div>
               </div>
             </li>
@@ -97,9 +103,6 @@
   <link rel="stylesheet" href="stylesheets/home/flexslider.css" type="text/css" media="screen" />
   <script defer src="javascripts/module/jquery.flexslider.js"></script>
   <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
     $(window).load(function(){
       $('.flexslider').flexslider({
         animation: "slide",
@@ -119,21 +122,27 @@
       <p>在这里汇聚各科精英教师，总有一款适合你的孩子</p>
     </div>
     </a>
+    <a href="http://localhost:8080/jrjy/standard/perferJob.do">
     <div class="col-md-3 provide-left provide-two">
       <h5>最适合你的工作</h5>
       <h3>完美JOB</h3>
       <p>在这里你能够找到高性价比的工作，让你的课余生活丰富起来吧</p>
     </div>
+    </a>
+    <a href="/contact">
     <div class="col-md-3 provide-left provide-tre">
       <h5>手拉手</h5>
       <h3>合作交流</h3>
       <p>对我们的所有意见，小编一一接受，并且有精美的礼品呦</p>
     </div>
+    </a>
+    <a href="/current_flow">
     <div class="col-md-3 provide-left provide-four">
       <h5>网站访问量</h5>
       <h3>实时流量</h3>
       <p> 用数据告诉你为什么要来这里，这个平台你值得拥有</p>
     </div>
+    </a>
     <div class="clearfix"></div>
   </div>
   <!--end-provide-->
@@ -146,7 +155,7 @@
           <h4>这里有优秀老师总结的学习宝典</h4>
           <p>我们希望我们能够提供有品质</p>
           <div class="w-btn">
-            <a href="#" class="hvr-shutter-out-horizontal">了解更多</a>
+            <a href="student_rele_info/showLearnZiliao" class="hvr-shutter-out-horizontal">了解更多</a>
           </div>
         </div>
         <div class="col-md-6 welcome-left">
@@ -166,28 +175,26 @@
   <div class="join">
     <div class="container">
       <div class="join-main">
-        <div class="col-md-3 join-left">
+          <a href="/today_reco">
+        <div class="col-md-4 join-left">
           <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
           <h4>今日推荐</h4>
-          <p>Proin fermentum diam eu massa blandit, congue finibus ante pulvinar. Aliquam lacinia odio eros.</p>
+          <p>每天为大家推荐最新的家教信息，与博客文章</p>
         </div>
-        <a href="http://localhost:8080/jrjy/jsp/admin/login.jsp"><div class="col-md-3 join-left">
+      </a>
+        <a href="http://localhost:8080/jrjy/jsp/admin/login.jsp"><div class="col-md-4 join-left">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           <h4>管理员管理</h4>
-          <p>Proin fermentum diam eu massa blandit, congue finibus ante pulvinar. Aliquam lacinia odio eros.</p>
+          <p>此功能需要管理员账号</p>
         </div></a>
-        
-        <div class="col-md-3 join-left">
+         <a href="/hot_city">
+        <div class="col-md-4 join-left">
           <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
           <h4>热门城市</h4>
           <p>这是我们的业务范围.</p>
         </div>
-        <div class="col-md-3 join-left">
-          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-          <h4>付费商城</h4>
-          <p>这里有你想要的精品课程.但需要花费的的$才可以呀</p>
-        </div>
-        <div class="clearfix"></div>
+        <a>
+
       </div>
     </div>
   </div>
@@ -202,22 +209,22 @@
             <h3>新闻篇</h3>
           </div>
           <div class="news-bottom">
-            <h4>Excepteur sint occaecat cupidatat non proident</h4>
-            <p>Quisque at tellus ullamcorper, pharetra arcu a, suscipit purus. Nullam feugiat in augue in consequat. Sed ac dictum ligula, et pellentesque velit. In gravida eu felis sit amet molestie. Morbi sed ex ac enim finibus vulputate. Cras arcu magna, auctor ornare neque in, finibus tincidunt augue. </p>
+            <h4>教育局强调要让孩子快乐学习</h4>
+            <p>如今越来越多的孩子不喜欢学习，究其根本是因为现在孩子的作业越来越多了，他们根本没有时间在书本上获得快乐，教育局此次下达文件，要重视孩子们的素质教育。让孩子多去尝试。避免应试教育，这样对他们的成长才会有所帮助。 </p>
             <div class="news-one">
               <div class="news-one-left">
                 <img src="/stylesheets/images/n-1.jpg" alt="" />
               </div>
               <div class="news-one-right">
-                <h4>Morbi sed ex ac enim finibus vulputate. Cras arcu magna, auctor ornare neque in.</h4>
-                <p>Nullam egestas diam eu felis dignissim, vitae posuere ex pretium. Morbi quam purus, rhoncus eget enim sed, laoreet venenatis arcu. Curabitur vestibulum, orci pulvinar pretium cursus, diam ante pretium elit, at finibus nisl ligula vitae enim. eu eleifend enim condimentum ac.</p>
+                <h4>优秀教师分享交流会圆满结束</h4>
+                <p>昨日下午，我们在朝阳区望京SOHO 22楼会议中心举办了第二届，优秀教师分享交流会，在交流会上，几位优秀教师毫无保留的给大家分享了怎样才能成为一个家长喜欢，学生也喜欢的老师，给我们讲述了其中的方法。最后交流会在我们做游戏中完美落幕，期待下一次能够更加精彩。</p>
               </div>
               <div class="clearfix"></div>
             </div>
             <div class="news-one">
-              <h4>Nunc molestie venenatis nisi nec pharetra. Morbi nulla odio, commodo a facilisis sed, tristique eget ipsum.</h4>
-              <p>Cras gravida metus vel tortor porttitor pretium. Cras posuere sem ut neque commodo aliquet. Proin in dui tempor, volutpat velit congue, mollis felis. Proin quis ante vitae nunc cursus interdum. Sed nec placerat risus. Sed rhoncus nibh et accumsan placerat. Nunc nec libero a dui cursus mattis placerat a urna.</p>
-            </div>
+              <h4>这个夏天，让我们一起去亲近大自然吧。感受绚日和风</h4>
+              <p>活动通知：我们将在六月举办一场“跟着老师去旅行”活动，你可以邀请你喜欢的家教老师，与我们一起来场说走就走的旅行，希望希望大家踊跃报名。报名电话：010-33432233</p>
+            </div> 
           </div>
         </div>
         <div class="col-md-4 news-right">
@@ -228,15 +235,15 @@
             <div class="news-1">
               <img src="/stylesheets/images/n-2.jpg" alt="" />
               <div class="n-1">
-                <h5>Mauris eros felis</h5>
-                <p>Mauris varius consequat tortor vitae</p>
+                <h5>筑梦活动</h5>
+                <p>与孩子们在一起，感受童真</p>
               </div>
             </div>
             <div class="news-1">
               <img src="/stylesheets/images/n-3.jpg" alt="" />
               <div class="n-1">
-                <h5>Mauris eros felis</h5>
-                <p>Mauris varius consequat tortor vitae</p>
+                <h5>义务家教</h5>
+                <p>献出自己的一份爱心</p>
               </div>
             </div>
           </div>
@@ -252,32 +259,20 @@
       <div class="teacher-top">
         <h3>金牌教师</h3>
       </div>
-      <div class="teacher-main">
-        <div class="teacher-left">
-          <img src="/stylesheets/images/t-1.jpg" alt="" />
-          <h4>Sarah Smith</h4>
-          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
+      <div class="teacher-main gold-stu">
+      <script type="javascript/ractive" id="gold-stu-tpl">
+      {{#each obj}}
+      <div class="teacher-left">
+          <img src="{{imgUrl}}{{this.TXDZ}}" alt="" />
+          <h4>{{this.JSM}}</h4>
+           <h5>{{this.SSXX}}</h5>
+             <h5>擅长学科：{{this.SCKM}}</h5>
+          <p>{{this.JSJJ}}</p>
         </div>
-        <div class="teacher-left">
-          <img src="/stylesheets/images/t-2.jpg" alt="" />
-          <h4>Milla Row</h4>
-          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
-        </div>
-        <div class="teacher-left">
-          <img src="/stylesheets/images/t-3.jpg" alt="" />
-          <h4>John Franklin</h4>
-          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
-        </div>
-        <div class="teacher-left">
-          <img src="/stylesheets/images/t-4.jpg" alt="" />
-          <h4>Amina Wilson</h4>
-          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
-        </div>
-        <div class="teacher-left">
-          <img src="/stylesheets/images/t-5.jpg" alt="" />
-          <h4>Jack Jones</h4>
-          <p>Nunc nec libero a dui cursus mattis placerat a urna.</p>
-        </div>
+      {{/each}}
+        
+      </script>
+       
         <div class="clearfix"></div>
       </div>
     </div>

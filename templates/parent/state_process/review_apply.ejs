@@ -1,0 +1,143 @@
+<script type="javascript/ractive" id="reviewApply-tpl">
+	<div class="container">
+		<form class="form-inline" id="form-stateJobInfo" method="post" action="/state_process/getStateInfoP">
+	
+	  <br>
+	  
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">所教科目</label>
+	    <select class="form-control" placeholder="请选择" name="sjkm">
+			  <option value="">请选择</option>
+			  {{#each course}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	 
+	  <br>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">性别要求</label>
+	    <select class="form-control" placeholder="请选择" name="xb">
+			  <option value="">请选择</option>
+			  {{#each xb}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">专业要求</label>
+	    <select class="form-control" placeholder="请选择" name="zy">
+			  <option value="">请选择</option>
+			  {{#each szzy}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所教学期</label>
+	    <select class="form-control" placeholder="请选择" name="sjxq">
+			  <option value="">请选择</option>
+			  {{#each xq}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所教年级</label>
+	    <select class="form-control" placeholder="请选择" name="sjnj">
+			  <option value="">请选择</option>
+			  {{#each nj}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所在学校</label>
+	    <select class="form-control" placeholder="请选择" name="szxx">
+			  <option value="">请选择</option>
+			  {{#each xx}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">审批流程</label>
+	    <select class="form-control" placeholder="请选择" name="lc">
+			  <option value="">请选择</option>
+			  {{#each lc}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  
+<br>
+	  <button type="submit" style="margin-left:50px;" class="btn btn-primary">查询</button>
+	</form>
+</div>
+<hr/>
+<div class="main-table">
+<table class="xxtable table table-striped"></table>
+</div>
+ <form>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+        data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+         谢谢您的聘用，现在对我们这次家教进行评价吧！
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+         <div class="col-md-3 col-xs-3">
+         </div>
+         <div class="col-md-6 col-xs-6">
+          对此次家教进行打分满分100:
+           <input type="number" id="score" class="form-control"  size="2"/>
+           <input type="hidden" id="logintype" class="form-control"  />
+ 					<input type="hidden" id="info_id" class="form-control"  />
+
+           
+         </div>
+         <div class="col-md-3 col-xs-6">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-xs-6">
+          </div>
+          <div class="col-md-6 col-xs-6">
+            对此次家教的满意程度：
+            <select class="form-control" placeholder="请选择" id="myd">
+					   <option value="">请选择</option>
+					   {{#each myd}}
+					   <option value="{{this.ID}}">{{this.NAME}}</option>
+					   {{/each}}
+					  </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-xs-6">
+           </div>
+          <div class="col-md-6 col-xs-6">
+          对该教员的评价：
+          <textarea type="text" class="form-control" id="pj"></textarea >
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="submitPj">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+  </div>
+  </form>
+</script>

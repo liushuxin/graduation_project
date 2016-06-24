@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <mata name="viewport" content="width:device-width,initial-scale=1">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="stylesheets/common/bootstrap.min.css">
+     <link rel="stylesheet" href="stylesheets/common/dataTables.bootstrap.min.css">
+    
+    <link rel="stylesheet" href="stylesheets/page/student/index.css">
+      <style>
+        .chart_l{
+
+        height:400px;
+        width:800px;
+        color:purple;
+        }
+        select.form-control{
+            width:200px !important;
+        }
+
+        ul.bg-info{
+            font-size:20px;
+            display:inline-block;
+            width:385px;
+            min-height:280px;
+            margin-right:20px;
+            border-radius: 10px;
+        }
+  </style>
+</head>
+<body>
+<div class="myheading">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">
+                    <image src="/images/2.jpg" style="width:54px; margin-top:-20px;">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                   <li>会员管理</li>
+                   <li class="active"><a href="">你好！<%=username%>，老师</a> </li>
+                   <li><a href="/student/modifyPersonInfo">修改个人信息</a> </li>
+                 
+               </ul>
+<a href="/login/logout?user=student" class="btn btn-primary navbar-btn navbar-right" type="button">注销</a>
+             
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+<div class="mybody container">
+    <div class="row">
+        <div class="col-md-3 leftmenu">
+<div class="list-group">
+    <a href="#" class="list-group-item active" data-operation="workInfo"> 兼职信息查询</a>
+    <a href="#" class="list-group-item" data-operation="add"> 发布兼职信息</a>
+    <a href="#" class="list-group-item " data-operation="manageInfo"> 管理兼职信息</a>
+      <a href="#" class="list-group-item" data-operation="pinyongApplication">聘用请求</a>
+     <a href="#" class="list-group-item" data-operation="onWorkStream"> 正在进行的兼职流程</a>
+    <a href="#" class="list-group-item" data-operation="doneWorkStream"> 已完成的兼职流程</a> 
+    <a href="#" class="list-group-item " data-operation="uploadLearnFile"> 学习资料上传</a>
+    <a href="/student/shareExprience" class="list-group-item "> 经验分享</a>
+    <a href="#" class="list-group-item " data-operation="myShare"> 我的分享</a>
+    <a href="/" class="list-group-item "> 返回首页</a>
+     <a href="/" class="list-group-item ">1111</a>
+
+
+</div>
+        </div>
+        <div class="col-md-9 content" >
+<ol class="breadcrumb">
+    <li><a href="#">学睿家教</a></li>
+    <li><a href="#"><%=title%></a></li>
+
+</ol>
+<div class="main-content">
+    
+</div>
+
+
+        </div>
+
+    </div>
+
+    <div class="myfooter ">
+        <p>
+            @家睿教育 www.jrjy.com
+        </p>
+    </div>
+</div>
+</body>
+<% include tpls/jzxxcx.ejs %>
+<% include tpls/addJobInfo.ejs %>
+<% include tpls/modifyJobInfo.ejs %>
+<% include tpls/manageJobInfo.ejs %>
+<% include tpls/upload_file.ejs %>
+<% include tpls/my_share.ejs %>
+<% include state_process/apply_work.ejs %>
+<% include state_process/done_work.ejs %>
+<% include state_process/pinyong_apply.ejs %>
+
+
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/student/index.js" ></script>
+</html>

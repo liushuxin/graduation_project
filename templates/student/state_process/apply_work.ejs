@@ -1,0 +1,138 @@
+<script type="javascript/ractive" id="applywork-tpl">
+	
+	
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         等待接受
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+      {{#each wait:index}}
+      <ul class="bg-info">
+        <li>
+        所教课程名：{{#each course}}
+      {{#if this.ID == wait[index].SJKCM}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教学期：{{#each xq}}
+      {{#if this.ID == wait[index].SJXQ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教年级：{{#each nj}}
+      {{#if this.ID == wait[index].SJNJ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>初定薪资水平：{{wait[index].CDXZSP}}</li>
+        <li>备注：{{wait[index].BZ}}</li>
+        <li>开始时间：{{wait[index].KSSJ}}</li>
+        <li>家长电话：{{wait[index].TELE}}</li>
+        
+      </ul>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          正在进行
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        {{#each onway:index}}
+      <ul class="bg-info">
+        <li>
+        所教课程名：{{#each course}}
+      {{#if this.ID == onway[index].SJKCM}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教学期：{{#each xq}}
+      {{#if this.ID == onway[index].SJXQ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教年级：{{#each nj}}
+      {{#if this.ID == onway[index].SJNJ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>初定薪资水平：{{onway[index].CDXZSP}}</li>
+        <li>备注：{{onway[index].BZ}}</li>
+        <li>开始时间：{{onway[index].KSSJ}}</li>
+        <li>家长电话：{{onway[index].TELE}}</li>
+        
+      </ul>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+    <hr/>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          被驳回
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        {{#each sayno:index}}
+      <ul class="bg-info">
+        <li>
+        所教课程名：{{#each course}}
+      {{#if this.ID == sayno[index].SJKCM}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教学期：{{#each xq}}
+      {{#if this.ID == sayno[index].SJXQ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>
+        所教年级：{{#each nj}}
+      {{#if this.ID == sayno[index].SJNJ}}
+      {{this.NAME}}
+      {{/if}}
+      {{/each}}
+        </li>
+        <li>初定薪资水平：{{sayno[index].CDXZSP}}</li>
+        <li>备注：{{sayno[index].BZ}}</li>
+        <li>开始时间：{{sayno[index].KSSJ}}</li>
+        <li>家长电话：{{sayno[index].TELE}}</li>
+        
+      </ul>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+</script>

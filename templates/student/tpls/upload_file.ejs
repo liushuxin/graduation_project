@@ -1,0 +1,15 @@
+
+<script type="javascript/ractive" id="upload-file-tpl">
+<div class="container">
+	<form method="post" action="/student/uploadLearnFile" id="form-add-file" style="padding-left:150px;" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleInputEmail1">选择文件名</label>
+  
+    <input  style="width:500px;" class="form-control" type="file" name="fileToUpload" required="required" id="file_name"/>
+   
+  </div>
+  <button type="submit" class="btn btn-success">上传</button>
+</form>
+</div>
+	
+</script>

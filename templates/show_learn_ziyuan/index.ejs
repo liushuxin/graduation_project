@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=title%></title>
+	 <link rel="stylesheet" href="/stylesheets/common/bootstrap.min.css">
+     <link rel="stylesheet" href="/stylesheets/common/dataTables.bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/stylesheets/page/hot_city/index.css">
+    <style>
+	.column1{
+		margin-left:200px;
+		width:800px;
+		height:500px;
+	}
+	.shouye{
+		position:absolute;
+		right:10%;
+	}
+    </style>
+</head>
+<body>
+	<a href="/" class="shouye">返回首页</a>
+<ol class="breadcrumb">
+    <li><a href="#">学睿后台</a></li>
+    <li><a href="#">资源共享</a></li>
+    <li class="active">资源下载</li>
+</ol>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+             <thead>
+             <tr>
+                 <th>资源名</th>
+                 <th>上传者</th>
+                 <th>上传时间</th>
+                 <th>下载</th>
+             </tr>
+             </thead>
+                    <tbody class="domtbody">
+                   <script type="javascript/ractive" id="learn-tpl">
+                   {{#each obj}}
+                    <tr>
+                        <td>{{this.ZYM}}</td>
+                        <td>{{this.SCR}}</td>
+                        <td>{{this.CJSJ}}</td>
+                        <td><a href="{{url}}{{this.ZYLJ}}">点击下载</a></td>
+                    </tr>
+                    {{/each}}
+                   </script>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="/javascripts/lib/r.js" data-main="/javascripts/page/show_learn_ziliao/index.js" ></script>
+</html>

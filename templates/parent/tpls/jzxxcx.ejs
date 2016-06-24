@@ -1,0 +1,138 @@
+<script type="javascript/ractive" id="jzjzxx-tpl">
+	<div class="container">
+		<form class="form-inline" id="form-jjjzxx" method="get" action="/student_rele_info/getJobInfoP">
+	  <div class="form-group">
+	    <label for="exampleInputName2">希望薪资》=</label>
+	    <input type="number" class="form-control"  placeholder="只能是数字" name="start_xzsp">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">希望薪资《=</label>
+	    <input type="number" class="form-control" name="end_xzsp"  placeholder="只能是数字">
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">家庭住址</label>
+	    <input type="text" class="form-control" name="xm"  placeholder="支持模糊查询">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">所教科目</label>
+	    <select class="form-control" placeholder="请选择" name="sjkm">
+			  <option value="">请选择</option>
+			  {{#each course}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	 
+	  <br>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">性别要求</label>
+	    <select class="form-control" placeholder="请选择" name="xb">
+			  <option value="">请选择</option>
+			  {{#each sex}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">专业要求</label>
+	    <select class="form-control" placeholder="请选择" name="zy">
+			  <option value="">请选择</option>
+			  {{#each zy}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所教学期</label>
+	    <select class="form-control" placeholder="请选择" name="sjxq">
+			  <option value="">请选择</option>
+			  {{#each xq}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所教年级</label>
+	    <select class="form-control" placeholder="请选择" name="sjnj">
+			  <option value="">请选择</option>
+			  {{#each nj}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">所在学校</label>
+	    <select class="form-control" placeholder="请选择" name="szxx">
+			  <option value="">请选择</option>
+			  {{#each xx}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  
+<br>
+	  <button type="submit" style="margin-left:50px;" class="btn btn-primary">查询</button>
+	</form>
+</div>
+<hr/>
+<div class="main-table">
+<table class="xxtable table table-striped"></table>
+</div>
+<div class="modal fade" id="myDetail" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+        data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+        大学生教师兼职信息能力分析
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+         <div class="col-md-3 col-xs-3">
+         </div>
+         <div class="col-md-6 col-xs-6">
+        大学生教师姓名:{{name}}
+         </div>
+         <div class="col-md-3 col-xs-6">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-xs-6">
+          </div>
+          <div class="col-md-6 col-xs-6">
+           共完成了几次家教：{{size}}
+           
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-xs-6">
+           </div>
+          <div class="col-md-6 col-xs-6">
+         家长对{{name}}的评价：&nbsp;&nbsp;
+         <ol>
+         {{#each obj}}
+         	<li>{{this.PJ}} <br>
+         	兼职分数：&nbsp;&nbsp;{{this.SCORE}}<br>
+         	满意度:&nbsp;&nbsp;<widget tableName="DIR_STD_MYCD" codevalue="{{this.MYD}}"/> <br>
+         	时间：&nbsp;&nbsp;{{this.JSSJ}}</li>
+         	{{/each}}
+         </ol>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+  </div>
+</script>

@@ -34,6 +34,7 @@ require([
       //初始化
       self.initBanner();
       self.initEvent();
+      self.initGold();
     },
     initEvent:function(){
         $(".scroll").click(function(event){   
@@ -45,25 +46,33 @@ require([
 
         //end banner
         //
-                  $(document).ready(function() {
-                    /*
-                    var defaults = {
-                        containerID: 'toTop', // fading element id
-                      containerHoverID: 'toTopHover', // fading element hover id
-                      scrollSpeed: 1200,
-                      easingType: 'linear' 
-                    };
-                    */
-                    
-                    $().UItoTop({ easingType: 'easeOutQuart' });
-                    
-                  });
+
       //选择注册类型
       $('.modal-body').on('click','button.btn',function(event){
         $('#myModal').modal('hide');
       });
     },
     initBanner:function(){
+    },
+    initGold:function(){
+      request
+        .get("/getGoldTeacher")
+        .end(function(err,res){
+          if(!err){
+            var data = JSON.parse(res.text);
+            console.log(data);
+            //绘制金牌教师
+            var rac = Ractive({
+              el:'.gold-stu',
+              template:$("#gold-stu-tpl").html(),
+              data:{
+                obj:data,
+                imgUrl:"http://localhost:8080/jrjy/"
+              }
+            });
+          }
+        });
+      
     }
   }
 //初始化页面

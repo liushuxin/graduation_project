@@ -1,0 +1,75 @@
+<script type="javascript/ractive" id="manageJobInfo-tpl">
+	<div class="container">
+		<form class="form-inline" id="form-manageJobInfo" method="post" action="/parent_rele_info/getWorkInfo">
+	  <div class="form-group">
+	    <label for="exampleInputName2">薪资水平》=</label>
+	    <input type="number" class="form-control"  placeholder="只能是数字" name="start_cdxzsp">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">薪资水平《=</label>
+	    <input type="number" class="form-control" name="end_cdxzsp"  placeholder="只能是数字">
+	  </div>
+	  <br>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">家庭住址</label>
+	    <input type="text" class="form-control" name="jtzz"  placeholder="支持模糊查询">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">要求课程名</label>
+	    <select class="form-control" placeholder="请选择" name="yqkcm">
+			  <option value="">请选择</option>
+			  {{#each course}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	  	  <br>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">要求学期</label>
+	    <select class="form-control" placeholder="请选择" name="yqxq">
+			  <option value="">请选择</option>
+			  {{#each xq}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">要求所教年级</label>
+	    <select class="form-control" placeholder="请选择" name="yqsjnj">
+			  <option value="">请选择</option>
+			  {{#each nj}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	 
+	  <br>
+	  <div class="form-group">
+	    <label for="exampleInputEmail2">性别要求</label>
+	    <select class="form-control" placeholder="请选择" name="xbyq">
+			  <option value="">请选择</option>
+			  {{#each xb}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	   <div class="form-group">
+	    <label for="exampleInputEmail2">老师年级要求</label>
+	    <select class="form-control" placeholder="请选择" name="lsnjyq">
+			  <option value="">请选择</option>
+			  {{#each sznj}}
+			  <option value="{{this.ID}}">{{this.NAME}}</option>
+			  {{/each}}
+			</select>
+	  </div>
+	 
+	  <br>
+
+	  <button type="submit" style="margin-left:50px;" class="btn btn-primary">查询</button>
+	</form>
+</div>
+<hr/>
+<div class="main-table">
+<table class="xxtable table table-striped"></table>
+</div>
+</script>
